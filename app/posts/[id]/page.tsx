@@ -4,18 +4,13 @@ import { Typography, Container, Button, Box } from "@mui/material";
 import Link from "next/link";
 import makeStore from "@/store/store";
 
-interface Params {
-  id: string;
-}
-
 const getServerStore = () => {
-  const store = makeStore();
-  return store;
+  return makeStore();
 };
 
-const PostDetail = async ({ params }: { params: Params }) => {
-  const { id } = params;
-  const store = await getServerStore();
+const PostDetail = async ({ params }: { params: Promise<{ id: string }> }) => {
+  const { id } = await params;
+  const store = getServerStore();
   await store.dispatch(api.endpoints.getPost.initiate(id));
 
   const post = api.endpoints.getPost.select(id)(store.getState()).data;
