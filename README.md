@@ -152,4 +152,4 @@ Challenges Faced
 
 ### Live Demo
 
-[blog-dashboard.vercel.app](https://blog-dashboard.vercel.app)
+[blog-dashboard.vercel.app](https://blog-dashboard-dswqcv72i-vincent-james-demetrias-projects.vercel.app/)
